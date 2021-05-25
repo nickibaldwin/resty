@@ -1,0 +1,11 @@
+$bgColor: #f8edeb;
+
+footer {
+  background: $bgColor;
+  padding: 20px;
+  p {
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 20px;
+  }
+}

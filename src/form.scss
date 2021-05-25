@@ -1,0 +1,19 @@
+$bgColor: #f8edeb;
+
+body {
+
+  #form {
+    padding: 40px;
+    background: $bgColor;
+    color: #3d405b;
+    font-family: 'Roboto Condensed', sans-serif;
+    
+    #go {
+      color: #f28482;
+    }
+
+    #crud {
+      color: #81b29a;
+    }
+  }
+}
