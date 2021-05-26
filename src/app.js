@@ -1,20 +1,37 @@
 import React from 'react';
-import Header from './header.js';
-import Form from './form.js';
-import Footer from './footer.js';
-import './header.scss';
-import './form.scss';
-import './footer.scss';
-import './style.scss';
+import './app.scss';
+
+import Header from './components/header/Header';
+import Form from './components/form/Form';
+import Footer from './components/footer/Footer';
+import Results from './components/results/Results';
 
 class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = { //holding the state globally - one way data flow
+      loading: false,
+      count: 0,
+      body: [],
+    };
+  }
+
+  toggleLoading = () => {
+    this.setState({ loading: !this.state.loading });
+  }
+
+  handleForm = (count, results) => {
+    this.setState({ count, results });
+  }
+
   render() {
     return (
-      <React.Fragment>
+      <>
         <Header/>
-        <Form/>
+        <Form toggleLoading={this.toggleLoading} handler={this.handleForm}/>
+        <Results data={this.state.results}/>
         <Footer/>
-      </React.Fragment>
+      </>  
     );
   }
 }

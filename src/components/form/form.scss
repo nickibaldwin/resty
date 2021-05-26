@@ -2,17 +2,13 @@ $bgColor: #f8edeb;
 
 body {
 
-  #form {
+  form {
     padding: 40px;
     background: $bgColor;
-    color: #3d405b;
+    color: #2a2c41;
     font-family: 'Roboto Condensed', sans-serif;
-    
-    #go {
-      color: #f28482;
-    }
 
-    #crud {
+    .crud {
       color: #81b29a;
     }
   }
