@@ -11,26 +11,10 @@ class Results extends React.Component {
   render() {
     return(
       <section className="returnedResults">
-        <ReactJson src={this.props.people} />
+        <ReactJson src={this.props.data} />
       </section>
     );
   }
 }
-
-// const Results = (props) => {
-//   return (
-//     <section className="results">
-//       <ul>
-//         {Object.keys(props.results).map((item, idx) => {
-//           return (
-//             <li key={idx}>
-//               <a href={props.results[item]}>{item}</a>
-//             </li>
-//           );
-//         })}
-//       </ul>
-//     </section>
-//   );
-// };
 
 export default Results;

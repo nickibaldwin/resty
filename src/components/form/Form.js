@@ -11,49 +11,47 @@ class Form extends React.Component {
   }
 
   handleChange = e => {
-    let { name, value } = e.target;
-    this.setState({ [name]: value });
+    let URL = e.target.value;
+    this.setState({ URL });
   }
 
   handleSubmit = async e => {
     e.preventDefault();
-
-    let request = await fetch(this.state.url);
+    let request = await fetch(this.state.URL);
     let data = await request.json();
     let count = data.count;
     let people = data.results;
-    // let people = data.results.reduce((list, person) => {
-    //   list[person.name] = person.url;
-    //   return list;
-    // }, {});
+    // let { URL, method } = this.state;
 
     this.props.handler(count, people);
     this.props.toggleLoading(data, count);
+
+    // localStorage.setItem('URL', URL);
+    // localStorage.setItem('method', method);
+
   }
-  // let method = e.target.value;
-  // this.setState({ method });
+
+  handleClick = e => {
+    e.preventDefault();
+    let method = e.target.value;
+    this.setState( {method} );
+  }
+
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
         <section>
           <label>Paste URL here... 
-            <input type="text" value={this.state.url} onChange={this.handleChange} />
+            <input type="text" onChange={this.handleChange} />
           </label>
           <button type='submit' >Leggoooo!</button>
           <p id='form-directions'>... and choose one option below &#9660;</p>
         </section>
         <section>
-          <button type="radio" value="GET" onClick={this.handleClick} className="crud">GET</button>
-          <button value="PUT" onClick={this.handleClick} className="crud">PUT</button>
-          <button value="POST" onClick={this.handleClick} className="crud">POST</button>
-          <button value="DELETE" onClick={this.handleClick} className="crud">DELETE</button>
-          {/* <div className="crud">
-            <label>
-              <input type="radio" value="GET" name="method" />
-              <span>GET</span>
-            </label>
-          </div> */}
-
+          <button type="radio" value="GET" onClick={this.handleClick} className="rest">GET</button>
+          <button value="PUT" onClick={this.handleClick} className="rest">PUT</button>
+          <button value="POST" onClick={this.handleClick} className="rest">POST</button>
+          <button value="DELETE" onClick={this.handleClick} className="rest">DELETE</button>
         </section>
       </form>  
     );

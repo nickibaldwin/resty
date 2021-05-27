@@ -1,8 +1,8 @@
 # Code 401: Advanced Software Development in Full-Stack Javascript:
 
-## Lab Class 26: RESTy Phase 2
+## Lab Class 26: RESTy Phase 3
 
-## [Github Pull Request](https://github.com/nickibaldwin/resty/pull/2)
+## [Github Pull Request](https://github.com/nickibaldwin/resty/pull/3)
 
 ## Resources:
 
