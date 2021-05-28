@@ -1,14 +1,19 @@
 import React from 'react';
 import './form.scss';
+// import Loader from 'react-loaders';
 
 class Form extends React.Component {
   constructor(props) {
     super(props); // for now, just do this
     this.state = {
       URL: '',
-      method: '',
+      method: 'GET',
     };
   }
+
+  // renderLoader = e => {
+  //   return <Loader type="line-scale" active/>;
+  // }
 
   handleChange = e => {
     let URL = e.target.value;
@@ -22,8 +27,8 @@ class Form extends React.Component {
     let count = data.count;
     let people = data.results;
     // let { URL, method } = this.state;
-
-    this.props.handler(count, people);
+    
+    this.props.handler(count, people, { URL: this.state.URL, method: this.state.method });
     this.props.toggleLoading(data, count);
 
     // localStorage.setItem('URL', URL);
