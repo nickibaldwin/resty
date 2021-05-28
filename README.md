@@ -2,7 +2,7 @@
 
 ## Lab Class 26: RESTy Phase 3
 
-## [Github Pull Request](https://github.com/nickibaldwin/resty/pull/3)
+## [Github Pull Request](https://github.com/nickibaldwin/resty/pull/4)
 
 ## Resources:
 

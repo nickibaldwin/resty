@@ -1,5 +1,5 @@
 import React from 'react';
-// import Modal from './modal';
+import Modal from '../modal/Modal.js';
 import { If, Then, Else } from 'react-if';
 
 class Home extends React.Component {
